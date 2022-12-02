@@ -1,0 +1,13 @@
+{
+	"miniprogramRoot": "./dist/webapp",
+	"projectname": "taro-get-start",
+	"description": "基础演示站点",
+	"appid": "touristappid",
+	"setting": {
+		"urlCheck": true,
+		"es6": false,
+		"postcss": false,
+		"minified": false
+	},
+	"compileType": "miniprogram"
+}
