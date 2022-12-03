@@ -41,6 +41,7 @@
     "@tarojs/plugin-html": "3.5.8",
     "@tarojs/runtime": "3.5.8",
     "@tarojs/taro": "3.5.8",
+    "crypto-js": "^4.1.1",
     "vue": "^3.0.0"
   },
   "devDependencies": {

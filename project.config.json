@@ -2,7 +2,7 @@
 	"miniprogramRoot": "./dist/webapp",
 	"projectname": "taro-get-start",
 	"description": "基础演示站点",
-	"appid": "touristappid",
+	"appid": "wx22f122d7b4d4a253",
 	"setting": {
 		"urlCheck": true,
 		"es6": false,
