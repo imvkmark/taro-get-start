@@ -3,7 +3,7 @@ module.exports = {
         NODE_ENV: '"development"'
     },
     defineConstants: {
-        'process.env.APP_URL': JSON.stringify('https://start.wulicode.com')
+        'process.env.APP_URL': '"https://i.wulicode.com"'
     },
     mini: {},
     h5: {}

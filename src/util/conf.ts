@@ -8,6 +8,7 @@ export const envIsWeapp = taroEnv === 'weapp';
 // 访问接口URL
 export const appUrl: string = String(process.env.APP_URL);
 
+console.log(appUrl)
 
 // 存储KEY
 export const storageKey = {

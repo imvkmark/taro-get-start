@@ -1,6 +1,6 @@
-import { appUrl, envIsH5, storageKey, taroEnv } from './conf';
-import { each, forEach, get, isNaN, isNil, isObject, keys, merge, set, trim } from 'lodash-es';
-import { MD5 } from 'crypto-js';
+import {appUrl, envIsH5, storageKey, taroEnv} from './conf';
+import {each, forEach, get, isNaN, isNil, isObject, keys, merge, set, trim} from 'lodash-es';
+import md5 from 'md5';
 import pkgJson from '../../package.json';
 import Taro from "@tarojs/taro";
 
@@ -24,7 +24,7 @@ const requestSignV1 = (params: any, token = '') => {
         }
     });
     str = str.slice(0, -1);
-    let step1Md5 = MD5(MD5(str).toString() + token).toString();
+    let step1Md5 = md5(md5(str).toString() + token).toString();
 
     let signStr = `${step1Md5.charAt(1)}${step1Md5.charAt(3)}${step1Md5.charAt(15)}${step1Md5.charAt(31)}`
     if (debug) {
@@ -36,7 +36,7 @@ const requestSignV1 = (params: any, token = '') => {
 
 // 请求方法
 const combineOptions = (options: RequestOptions) => {
-    let { method = 'post', params: oriParams = {}, url, headers = {} } = options;
+    let {method = 'post', params: oriParams = {}, url, headers = {}} = options;
     let params: any;
     if (envIsH5 && oriParams instanceof FormData) {
         params = new FormData();
@@ -89,8 +89,8 @@ const combineOptions = (options: RequestOptions) => {
     }
 };
 
-export default async function request(options: RequestOptions) {
-    return await Taro.request(merge(combineOptions(options), {
+export default function request(options: RequestOptions) {
+    return Taro.request(merge(combineOptions(options), {
         fail: function () {
             console.log(
                 'request fail'

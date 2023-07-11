@@ -3,8 +3,11 @@
 dist/
 deploy_versions/
 .temp/
+.swc/
 .rn_temp/
 node_modules/
 .DS_Store
 yarn.lock
 pnpm-lock.yaml
+
+components.d.ts
